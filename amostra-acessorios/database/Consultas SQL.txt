@@ -1,0 +1,15 @@
+/* Criação das Tabelas */
+
+create table credor(
+    cod_credor int AUTO_INCREMENT PRIMARY KEY,
+    credor varchar(40)
+);
+
+create TABLE compras(
+    numero int AUTO_INCREMENT primary KEY,
+    data_compra date,
+    valor float,
+    cod_credor int,
+    tipo tinyint default 1,
+    FOREIGN KEY (cod_credor) REFERENCES credor(cod_credor)
+);
